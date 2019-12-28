@@ -1,0 +1,7 @@
+*.log
+backup/
+ip_repo/
+sdk/SDK.log
+vivado/*
+!vivado/HDMI_PASS.xpr
+*.zip
