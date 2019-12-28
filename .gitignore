@@ -3,5 +3,5 @@ backup/
 ip_repo/
 sdk/SDK.log
 vivado/*
-!vivado/HDMI_PASS.xpr
+!vivado/QR_Reader.xpr
 *.zip

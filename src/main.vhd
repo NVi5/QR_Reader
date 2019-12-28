@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 27.12.2019 16:22:10
 -- Design Name: 
--- Module Name: hdmi_pass - Structural
+-- Module Name: main - Structural
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VComponents.all;
 
-entity hdmi_pass is
+entity main is
     port ( 
 	sysclk_i         : in  std_logic; -- 125MHz clock
 	async_reset_i    : in  std_logic; -- reset
@@ -52,10 +52,10 @@ entity hdmi_pass is
 	tmds_tx_data_p_o : out std_logic_vector(2 downto 0);
 	tmds_tx_data_n_o : out std_logic_vector(2 downto 0)	
 	);
-end hdmi_pass;
+end main;
 
 
-architecture Structural of hdmi_pass is
+architecture Structural of main is
 
 component grey_convert is
     port ( 
