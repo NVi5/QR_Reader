@@ -19,7 +19,6 @@ entity grey_convert is
            hsync_in : in STD_LOGIC;
            vsync_in : in STD_LOGIC;
            vde_in : in STD_LOGIC;
-           clk_out : out STD_LOGIC;
            rgb_out : out STD_LOGIC_VECTOR (23 downto 0);
            hsync_out : out STD_LOGIC;
            vsync_out : out STD_LOGIC;
@@ -30,7 +29,6 @@ end grey_convert;
 architecture Behavioral of grey_convert is
 
 begin
-clk_out <= clk_in;
 
 Convert_grey: process(clk_in)
 

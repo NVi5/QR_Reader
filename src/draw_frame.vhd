@@ -32,7 +32,6 @@ entity draw_frame is
         hcounter_in : in STD_LOGIC_VECTOR (10 downto 0);
         vcounter_in : in STD_LOGIC_VECTOR (10 downto 0);
         
-        clk_out : out STD_LOGIC;
         rgb_out : out STD_LOGIC_VECTOR (23 downto 0);
         hsync_out : out STD_LOGIC;
         vsync_out : out STD_LOGIC;
@@ -46,7 +45,6 @@ end draw_frame;
 architecture Behavioral of draw_frame is
 
 begin
-clk_out <= clk_in;
 
 Draw: process(clk_in)
 variable hcounter_int : integer range 0 to 2047 := 0;

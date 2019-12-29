@@ -30,7 +30,6 @@ entity bw_convert is
         vsync_in : in STD_LOGIC;
         vde_in : in STD_LOGIC;
         
-        clk_out : out STD_LOGIC;
         rgb_out : out STD_LOGIC_VECTOR (23 downto 0);
         hsync_out : out STD_LOGIC;
         vsync_out : out STD_LOGIC;
@@ -55,8 +54,6 @@ begin
     variable pixel_accumulator : integer range 0 to pixel_max_sum := 0;
     variable average : integer range 0 to 2**color_depth_bit := 0;
     begin
-
-        clk_out <= clk_in;
         
         if rising_edge(clk_in) then
             if (arst = '1') then          
