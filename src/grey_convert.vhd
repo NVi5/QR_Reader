@@ -56,7 +56,7 @@ begin
             blue(7 downto 0) := unsigned(rgb_in(7 downto 0));
             rgb_temp := (shift_left(shift_left(green,1)+red+green,1)+blue)/9;
             rgb_out <= std_logic_vector(rgb_temp(7 downto 0)&rgb_temp(7 downto 0)&rgb_temp(7 downto 0));
-            end if;
+        end if;
     end if;
 end process Convert_grey;
 

@@ -1,23 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: Jan Wolowiec
--- 
--- Create Date: 27.12.2019 16:22:10
--- Design Name: 
--- Module Name: main - Structural
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -85,7 +65,29 @@ component bw_convert is
 	rgb_out : out STD_LOGIC_VECTOR (23 downto 0);
 	hsync_out : out STD_LOGIC;
 	vsync_out : out STD_LOGIC;
-	vde_out : out STD_LOGIC
+	vde_out : out STD_LOGIC;
+	hcounter : out STD_LOGIC_VECTOR (10 downto 0);
+    vcounter : out STD_LOGIC_VECTOR (10 downto 0)
+	);
+end component;
+
+component draw_frame is
+	port ( 
+	clk_in : in STD_LOGIC;
+	arst : in STD_LOGIC;
+	rgb_in : in STD_LOGIC_VECTOR (23 downto 0);
+	hsync_in : in STD_LOGIC;
+	vsync_in : in STD_LOGIC;
+	vde_in : in STD_LOGIC;
+    hcounter_in : in STD_LOGIC_VECTOR (10 downto 0);
+    vcounter_in : in STD_LOGIC_VECTOR (10 downto 0);
+	clk_out : out STD_LOGIC;
+	rgb_out : out STD_LOGIC_VECTOR (23 downto 0);
+	hsync_out : out STD_LOGIC;
+	vsync_out : out STD_LOGIC;
+	vde_out : out STD_LOGIC;
+	hcounter_out : out STD_LOGIC_VECTOR (10 downto 0);
+    vcounter_out : out STD_LOGIC_VECTOR (10 downto 0)
 	);
 end component;
 
@@ -155,6 +157,18 @@ signal vid_pHSync_BW      : std_logic;
 signal vid_pVSync_BW      : std_logic;
 signal PixelClk_BW        : std_logic;
 
+signal vid_pHCounter_BW   : std_logic_vector(10 downto 0);
+signal vid_pVcounter_BW   : std_logic_vector(10 downto 0);
+
+signal vid_pData_FR       : std_logic_vector(23 downto 0); 
+signal vid_pVDE_FR        : std_logic;
+signal vid_pHSync_FR      : std_logic;
+signal vid_pVSync_FR      : std_logic;
+signal PixelClk_FR        : std_logic;
+
+--signal vid_pHCounter_FR   : std_logic_vector(10 downto 0);
+--signal vid_pVcounter_FR   : std_logic_vector(10 downto 0);
+
 signal locked             : std_logic;
 signal clk_200M           : std_logic;
 signal pixel_clk_sync_rst : std_logic;
@@ -195,8 +209,29 @@ bw_convert_inst : bw_convert
 	rgb_out => vid_pData_BW,
 	hsync_out => vid_pHSync_BW,
 	vsync_out => vid_pVSync_BW,
-	vde_out => vid_pVDE_BW
+	vde_out => vid_pVDE_BW,
+	hcounter => vid_pHCounter_BW,
+	vcounter => vid_pVcounter_BW
 	);
+	
+draw_frame_inst : draw_frame
+    port map ( 
+    clk_in => PixelClk_BW,
+    arst => async_reset_i,
+    rgb_in => vid_pData_BW,
+    hsync_in => vid_pHSync_BW,
+    vsync_in => vid_pVSync_BW,
+    vde_in => vid_pVDE_BW,
+    hcounter_in => vid_pHCounter_BW,
+    vcounter_in => vid_pVcounter_BW,
+    clk_out => PixelClk_FR,
+    rgb_out => vid_pData_FR,
+    hsync_out => vid_pHSync_FR,
+    vsync_out => vid_pVSync_FR,
+    vde_out => vid_pVDE_FR,
+    hcounter_out => open,
+    vcounter_out => open
+    );
 
 
 clkwiz_inst : clk_wiz_0
@@ -263,11 +298,11 @@ rgb2dvi_inst : rgb2dvi_0
     TMDS_Data_p => tmds_tx_data_p_o,
     TMDS_Data_n => tmds_tx_data_n_o,
     aRst        => async_reset_i,
-    vid_pData   => vid_pData_BW,
-    vid_pVDE    => vid_pVDE_BW,
-    vid_pHSync  => vid_pHSync_BW,
-    vid_pVSync  => vid_pVSync_BW,
-    PixelClk    => PixelClk_BW
+    vid_pData   => vid_pData_FR,
+    vid_pVDE    => vid_pVDE_FR,
+    vid_pHSync  => vid_pHSync_FR,
+    vid_pVSync  => vid_pVSync_FR,
+    PixelClk    => PixelClk_FR
 	);
 
 end Structural;
