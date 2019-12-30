@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Sun Dec 29 22:31:28 2019
--- Host        : DESKTOP-A5397SU running 64-bit major release  (build 9200)
+-- Date        : Mon Dec 30 09:33:00 2019
+-- Host        : DESKTOP-MKH1C9V running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               D:/Elektronika/Workspace/Xilinx/QR_Reader/ip_core/Im_Process/ip/Im_Process_rst_ps7_0_50M_0/Im_Process_rst_ps7_0_50M_0_stub.vhdl
+--               C:/Users/wojte/Desktop/pul_fpga_projekt_qr/QR_Reader/ip_core/Im_Process/ip/Im_Process_rst_ps7_0_50M_0/Im_Process_rst_ps7_0_50M_0_stub.vhdl
 -- Design      : Im_Process_rst_ps7_0_50M_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

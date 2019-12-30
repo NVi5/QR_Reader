@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Sun Dec 29 22:37:09 2019
--- Host        : DESKTOP-A5397SU running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top Im_Process_xbar_0 -prefix
---               Im_Process_xbar_0_ Im_Process_xbar_0_stub.vhdl
+-- Date        : Mon Dec 30 09:33:13 2019
+-- Host        : DESKTOP-MKH1C9V running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub
+--               C:/Users/wojte/Desktop/pul_fpga_projekt_qr/QR_Reader/ip_core/Im_Process/ip/Im_Process_xbar_0/Im_Process_xbar_0_stub.vhdl
 -- Design      : Im_Process_xbar_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

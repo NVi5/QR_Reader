@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
---Date        : Mon Dec 30 08:16:10 2019
+--Date        : Mon Dec 30 09:30:02 2019
 --Host        : DESKTOP-MKH1C9V running 64-bit major release  (build 9200)
 --Command     : generate_target Im_Process.bd
 --Design      : Im_Process
@@ -1559,19 +1559,19 @@ architecture STRUCTURE of Im_Process is
     mm2s_introut : out STD_LOGIC
   );
   end component Im_Process_axi_dma_0_0;
-  signal TextBlock_0_Video_IN_blnk : STD_LOGIC;
-  signal TextBlock_0_Video_IN_hcount : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal TextBlock_0_Video_IN_hsync : STD_LOGIC;
-  signal TextBlock_0_Video_IN_rgb : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal TextBlock_0_Video_IN_vcount : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal TextBlock_0_Video_IN_vsync : STD_LOGIC;
+  signal TextBlock_0_Video_OUT_blnk : STD_LOGIC;
+  signal TextBlock_0_Video_OUT_hcount : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal TextBlock_0_Video_OUT_hsync : STD_LOGIC;
+  signal TextBlock_0_Video_OUT_rgb : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal TextBlock_0_Video_OUT_vcount : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal TextBlock_0_Video_OUT_vsync : STD_LOGIC;
   signal Vclk_1 : STD_LOGIC;
-  signal Vin_1_blnk : STD_LOGIC;
-  signal Vin_1_hcount : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal Vin_1_hsync : STD_LOGIC;
-  signal Vin_1_rgb : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal Vin_1_vcount : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal Vin_1_vsync : STD_LOGIC;
+  signal Video_IN_0_1_blnk : STD_LOGIC;
+  signal Video_IN_0_1_hcount : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal Video_IN_0_1_hsync : STD_LOGIC;
+  signal Video_IN_0_1_rgb : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal Video_IN_0_1_vcount : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal Video_IN_0_1_vsync : STD_LOGIC;
   signal Vrst_1 : STD_LOGIC;
   signal axi_dma_0_M_AXIS_MM2S_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_dma_0_M_AXIS_MM2S_TLAST : STD_LOGIC;
@@ -1739,30 +1739,30 @@ architecture STRUCTURE of Im_Process is
   attribute X_INTERFACE_INFO of Vout_vcount : signal is "xilinx.com:user:RGBInterface:1.0 Vout vcount";
 begin
   RefClk_out <= processing_system7_0_FCLK_CLK0;
-  TextBlock_0_Video_IN_blnk <= Vin_blnk;
-  TextBlock_0_Video_IN_hcount(10 downto 0) <= Vin_hcount(10 downto 0);
-  TextBlock_0_Video_IN_hsync <= Vin_hsync;
-  TextBlock_0_Video_IN_rgb(23 downto 0) <= Vin_rgb(23 downto 0);
-  TextBlock_0_Video_IN_vcount(10 downto 0) <= Vin_vcount(10 downto 0);
-  TextBlock_0_Video_IN_vsync <= Vin_vsync;
   Vclk_1 <= Vclk;
-  Vout_blnk <= Vin_1_blnk;
-  Vout_hcount(10 downto 0) <= Vin_1_hcount(10 downto 0);
-  Vout_hsync <= Vin_1_hsync;
-  Vout_rgb(23 downto 0) <= Vin_1_rgb(23 downto 0);
-  Vout_vcount(10 downto 0) <= Vin_1_vcount(10 downto 0);
-  Vout_vsync <= Vin_1_vsync;
+  Video_IN_0_1_blnk <= Vin_blnk;
+  Video_IN_0_1_hcount(10 downto 0) <= Vin_hcount(10 downto 0);
+  Video_IN_0_1_hsync <= Vin_hsync;
+  Video_IN_0_1_rgb(23 downto 0) <= Vin_rgb(23 downto 0);
+  Video_IN_0_1_vcount(10 downto 0) <= Vin_vcount(10 downto 0);
+  Video_IN_0_1_vsync <= Vin_vsync;
+  Vout_blnk <= TextBlock_0_Video_OUT_blnk;
+  Vout_hcount(10 downto 0) <= TextBlock_0_Video_OUT_hcount(10 downto 0);
+  Vout_hsync <= TextBlock_0_Video_OUT_hsync;
+  Vout_rgb(23 downto 0) <= TextBlock_0_Video_OUT_rgb(23 downto 0);
+  Vout_vcount(10 downto 0) <= TextBlock_0_Video_OUT_vcount(10 downto 0);
+  Vout_vsync <= TextBlock_0_Video_OUT_vsync;
   Vrst_1 <= Vrst;
 TextBlock_0: component Im_Process_TextBlock_0_0
      port map (
-      blnk_in => TextBlock_0_Video_IN_blnk,
-      blnk_out => Vin_1_blnk,
-      hcount_in(10 downto 0) => TextBlock_0_Video_IN_hcount(10 downto 0),
-      hcount_out(10 downto 0) => Vin_1_hcount(10 downto 0),
-      hsync_in => TextBlock_0_Video_IN_hsync,
-      hsync_out => Vin_1_hsync,
-      rgb_in(23 downto 0) => TextBlock_0_Video_IN_rgb(23 downto 0),
-      rgb_out(23 downto 0) => Vin_1_rgb(23 downto 0),
+      blnk_in => Video_IN_0_1_blnk,
+      blnk_out => TextBlock_0_Video_OUT_blnk,
+      hcount_in(10 downto 0) => Video_IN_0_1_hcount(10 downto 0),
+      hcount_out(10 downto 0) => TextBlock_0_Video_OUT_hcount(10 downto 0),
+      hsync_in => Video_IN_0_1_hsync,
+      hsync_out => TextBlock_0_Video_OUT_hsync,
+      rgb_in(23 downto 0) => Video_IN_0_1_rgb(23 downto 0),
+      rgb_out(23 downto 0) => TextBlock_0_Video_OUT_rgb(23 downto 0),
       s00_axi_aclk => Vclk_1,
       s00_axi_araddr(3 downto 0) => ps7_0_axi_periph_M00_AXI_ARADDR(3 downto 0),
       s00_axi_aresetn => rst_ps7_0_50M_peripheral_aresetn(0),
@@ -1791,10 +1791,10 @@ TextBlock_0: component Im_Process_TextBlock_0_0
       s00_axis_tready => axi_dma_0_M_AXIS_MM2S_TREADY,
       s00_axis_tstrb(3 downto 0) => B"1111",
       s00_axis_tvalid => axi_dma_0_M_AXIS_MM2S_TVALID,
-      vcount_in(10 downto 0) => TextBlock_0_Video_IN_vcount(10 downto 0),
-      vcount_out(10 downto 0) => Vin_1_vcount(10 downto 0),
-      vsync_in => TextBlock_0_Video_IN_vsync,
-      vsync_out => Vin_1_vsync
+      vcount_in(10 downto 0) => Video_IN_0_1_vcount(10 downto 0),
+      vcount_out(10 downto 0) => TextBlock_0_Video_OUT_vcount(10 downto 0),
+      vsync_in => Video_IN_0_1_vsync,
+      vsync_out => TextBlock_0_Video_OUT_vsync
     );
 axi_dma_0: component Im_Process_axi_dma_0_0
      port map (

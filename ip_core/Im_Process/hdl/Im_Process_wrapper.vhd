@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
---Date        : Mon Dec 30 08:16:10 2019
+--Date        : Mon Dec 30 09:30:02 2019
 --Host        : DESKTOP-MKH1C9V running 64-bit major release  (build 9200)
 --Command     : generate_target Im_Process_wrapper.bd
 --Design      : Im_Process_wrapper
@@ -55,18 +55,6 @@ end Im_Process_wrapper;
 architecture STRUCTURE of Im_Process_wrapper is
   component Im_Process is
   port (
-    Vin_hcount : in STD_LOGIC_VECTOR ( 10 downto 0 );
-    Vin_blnk : in STD_LOGIC;
-    Vin_vcount : in STD_LOGIC_VECTOR ( 10 downto 0 );
-    Vin_hsync : in STD_LOGIC;
-    Vin_rgb : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    Vin_vsync : in STD_LOGIC;
-    Vout_hcount : out STD_LOGIC_VECTOR ( 10 downto 0 );
-    Vout_blnk : out STD_LOGIC;
-    Vout_vcount : out STD_LOGIC_VECTOR ( 10 downto 0 );
-    Vout_hsync : out STD_LOGIC;
-    Vout_rgb : out STD_LOGIC_VECTOR ( 23 downto 0 );
-    Vout_vsync : out STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -88,6 +76,18 @@ architecture STRUCTURE of Im_Process_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
+    Vout_hcount : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    Vout_blnk : out STD_LOGIC;
+    Vout_vcount : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    Vout_hsync : out STD_LOGIC;
+    Vout_rgb : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    Vout_vsync : out STD_LOGIC;
+    Vin_hcount : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    Vin_blnk : in STD_LOGIC;
+    Vin_vcount : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    Vin_hsync : in STD_LOGIC;
+    Vin_rgb : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    Vin_vsync : in STD_LOGIC;
     Vclk : in STD_LOGIC;
     RefClk_out : out STD_LOGIC;
     Vrst : in STD_LOGIC
