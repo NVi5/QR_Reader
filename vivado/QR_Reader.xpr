@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="C:/Users/wojte/Desktop/pul_fpga_projekt_qr/QR_Reader/vivado/QR_Reader.xpr">
+<Project Version="7" Minor="38" Path="D:/Elektronika/Workspace/Xilinx/QR_Reader/vivado/QR_Reader.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="6254e8da6cb14ef496054a4d53d0d2bb"/>
@@ -71,14 +71,11 @@
         <CompFileExtendedInfo CompFileName="Im_Process.bd" FileRelPathName="ip/Im_Process_TextBlock_0_0/Im_Process_TextBlock_0_0.xci">
           <Proxy FileSetName="Im_Process_TextBlock_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Im_Process.bd" FileRelPathName="ip/Im_Process_processing_system7_0_0/Im_Process_processing_system7_0_0.xci">
-          <Proxy FileSetName="Im_Process_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Im_Process.bd" FileRelPathName="ip/Im_Process_xbar_0/Im_Process_xbar_0.xci">
-          <Proxy FileSetName="Im_Process_xbar_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Im_Process.bd" FileRelPathName="ip/Im_Process_rst_ps7_0_50M_0/Im_Process_rst_ps7_0_50M_0.xci">
           <Proxy FileSetName="Im_Process_rst_ps7_0_50M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Im_Process.bd" FileRelPathName="ip/Im_Process_processing_system7_0_0/Im_Process_processing_system7_0_0.xci">
+          <Proxy FileSetName="Im_Process_processing_system7_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Im_Process.bd" FileRelPathName="ip/Im_Process_axi_dma_0_0/Im_Process_axi_dma_0_0.xci">
           <Proxy FileSetName="Im_Process_axi_dma_0_0"/>
@@ -88,6 +85,9 @@
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Im_Process.bd" FileRelPathName="ip/Im_Process_auto_pc_0/Im_Process_auto_pc_0.xci">
           <Proxy FileSetName="Im_Process_auto_pc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Im_Process.bd" FileRelPathName="ip/Im_Process_xbar_0/Im_Process_xbar_0.xci">
+          <Proxy FileSetName="Im_Process_xbar_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PPRDIR/../ip_core/rgb2dvi_0/rgb2dvi_0.xci">
@@ -124,13 +124,6 @@
       </File>
       <File Path="$PPRDIR/../src/main.vhd">
         <FileInfo SFType="VHDL2008">
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../ip_core/TextBlock_1.0/drivers/TextBlock_v1_0/src/TextBlock.h">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -274,9 +267,7 @@
     </Run>
     <Run Id="Im_Process_TextBlock_0_0_synth_1" Type="Ft3:Synth" SrcSet="Im_Process_TextBlock_0_0" Part="xc7z010clg400-1" ConstrsSet="Im_Process_TextBlock_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Im_Process_TextBlock_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -285,9 +276,7 @@
     </Run>
     <Run Id="Im_Process_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="Im_Process_auto_pc_1" Part="xc7z010clg400-1" ConstrsSet="Im_Process_auto_pc_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Im_Process_auto_pc_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -296,9 +285,7 @@
     </Run>
     <Run Id="Im_Process_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="Im_Process_auto_pc_0" Part="xc7z010clg400-1" ConstrsSet="Im_Process_auto_pc_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Im_Process_auto_pc_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -388,9 +375,7 @@
     </Run>
     <Run Id="Im_Process_TextBlock_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Im_Process_TextBlock_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="Im_Process_TextBlock_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -406,9 +391,7 @@
     </Run>
     <Run Id="Im_Process_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Im_Process_auto_pc_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="Im_Process_auto_pc_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -424,9 +407,7 @@
     </Run>
     <Run Id="Im_Process_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Im_Process_auto_pc_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="Im_Process_auto_pc_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
