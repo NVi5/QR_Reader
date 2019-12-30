@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:TextBlock:1.1
-// IP Revision: 13
+// IP Revision: 15
 
 (* X_CORE_INFO = "TextBlock_v1_0,Vivado 2018.2" *)
 (* CHECK_LICENSE_TYPE = "Im_Process_TextBlock_0_0,TextBlock_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "Im_Process_TextBlock_0_0,TextBlock_v1_0,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=TextBlock,x_ipVersion=1.1,x_ipCoreRevision=13,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4,C_S00_AXIS_TDATA_WIDTH=32,TEXT_WIDTH=16,TEXT_HEIGHT=16}" *)
+(* CORE_GENERATION_INFO = "Im_Process_TextBlock_0_0,TextBlock_v1_0,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=TextBlock,x_ipVersion=1.1,x_ipCoreRevision=15,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4,C_S00_AXIS_TDATA_WIDTH=32,TEXT_WIDTH=16,TEXT_HEIGHT=16}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module Im_Process_TextBlock_0_0 (
   vcount_in,

@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Mon Dec 30 09:33:00 2019
--- Host        : DESKTOP-MKH1C9V running 64-bit major release  (build 9200)
+-- Date        : Mon Dec 30 14:06:39 2019
+-- Host        : DESKTOP-A5397SU running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               C:/Users/wojte/Desktop/pul_fpga_projekt_qr/QR_Reader/ip_core/Im_Process/ip/Im_Process_rst_ps7_0_50M_0/Im_Process_rst_ps7_0_50M_0_sim_netlist.vhdl
+--               D:/Elektronika/Workspace/Xilinx/QR_Reader/ip_core/Im_Process/ip/Im_Process_rst_ps7_0_50M_0/Im_Process_rst_ps7_0_50M_0_sim_netlist.vhdl
 -- Design      : Im_Process_rst_ps7_0_50M_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.

@@ -1,0 +1,17 @@
+/*
+ * Empty C++ Application
+ */
+#include "xaxidma.h"
+#include "xparameters.h"
+#include "xil_exception.h"
+
+#define TEXT_BASE				XPAR_TEXTBLOCK_0_S00_AXI_BASEADDR
+#define TEXT_XPOS				(*(uint32_t*)(VGA_TEXT_BASE + 0))
+#define TEXT_YPOS				(*(uint32_t*)(VGA_TEXT_BASE + 4))
+#define TEXT_COLOR				(*(uint32_t*)(VGA_TEXT_BASE + 8))
+#define TEXT_SCALE				(*(uint32_t*)(VGA_TEXT_BASE + 12))
+
+int main()
+{
+	return 0;
+}
