@@ -1,6 +1,7 @@
 *.log
 backup/
 ip_repo/
+Packages/
 sdk/SDK.log
 vivado/*
 !vivado/QR_Reader.xpr
