@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Dec 29 22:41:28 2019" VIVADOVERSION="2018.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Dec 30 08:16:48 2019" VIVADOVERSION="2018.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="Im_Process" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -16,6 +16,27 @@
     <PORT DIR="O" NAME="Vout_hsync" SIGIS="undef"/>
     <PORT DIR="O" LEFT="23" NAME="Vout_rgb" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="O" NAME="Vout_vsync" SIGIS="undef"/>
+    <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef"/>
+    <PORT DIR="IO" NAME="DDR_cke" SIGIS="undef"/>
+    <PORT CLKFREQUENCY="100000000" DIR="IO" NAME="DDR_ck_n" SIGIS="clk"/>
+    <PORT CLKFREQUENCY="100000000" DIR="IO" NAME="DDR_ck_p" SIGIS="clk"/>
+    <PORT DIR="IO" NAME="DDR_cs_n" SIGIS="undef"/>
+    <PORT DIR="IO" NAME="DDR_reset_n" SIGIS="rst"/>
+    <PORT DIR="IO" NAME="DDR_odt" SIGIS="undef"/>
+    <PORT DIR="IO" NAME="DDR_ras_n" SIGIS="undef"/>
+    <PORT DIR="IO" NAME="DDR_we_n" SIGIS="undef"/>
+    <PORT DIR="IO" LEFT="2" NAME="DDR_ba" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="IO" LEFT="14" NAME="DDR_addr" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="IO" LEFT="3" NAME="DDR_dm" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="IO" LEFT="31" NAME="DDR_dq" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="IO" LEFT="3" NAME="DDR_dqs_n" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="IO" LEFT="3" NAME="DDR_dqs_p" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef"/>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef"/>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef"/>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef"/>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef"/>
     <PORT CLKFREQUENCY="74250000" DIR="I" NAME="Vclk" SIGIS="clk" SIGNAME="External_Ports_Vclk">
       <CONNECTIONS>
         <CONNECTION INSTANCE="TextBlock_0" PORT="s00_axi_aclk"/>
@@ -41,27 +62,6 @@
         <CONNECTION INSTANCE="rst_ps7_0_50M" PORT="ext_reset_in"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef"/>
-    <PORT DIR="IO" NAME="DDR_cke" SIGIS="undef"/>
-    <PORT CLKFREQUENCY="100000000" DIR="IO" NAME="DDR_ck_n" SIGIS="clk"/>
-    <PORT CLKFREQUENCY="100000000" DIR="IO" NAME="DDR_ck_p" SIGIS="clk"/>
-    <PORT DIR="IO" NAME="DDR_cs_n" SIGIS="undef"/>
-    <PORT DIR="IO" NAME="DDR_reset_n" SIGIS="rst"/>
-    <PORT DIR="IO" NAME="DDR_odt" SIGIS="undef"/>
-    <PORT DIR="IO" NAME="DDR_ras_n" SIGIS="undef"/>
-    <PORT DIR="IO" NAME="DDR_we_n" SIGIS="undef"/>
-    <PORT DIR="IO" LEFT="2" NAME="DDR_ba" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="IO" LEFT="14" NAME="DDR_addr" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="IO" LEFT="3" NAME="DDR_dm" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="IO" LEFT="31" NAME="DDR_dq" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="IO" LEFT="3" NAME="DDR_dqs_n" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="IO" LEFT="3" NAME="DDR_dqs_p" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef"/>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef"/>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef"/>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef"/>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef"/>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -2738,7 +2738,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="RefClk_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst"/>
+        <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_50M" PORT="aux_reset_in"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="IO" LEFT="53" NAME="MIO" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="IO" NAME="DDR_CAS_n" SIGIS="undef"/>
         <PORT DIR="IO" NAME="DDR_CKE" SIGIS="undef"/>
@@ -3827,7 +3831,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="Vrst"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="aux_reset_in" SIGIS="rst"/>
+        <PORT DIR="I" NAME="aux_reset_in" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_RESET0_N"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" NAME="mb_debug_sys_rst" SIGIS="rst"/>
         <PORT DIR="I" NAME="dcm_locked" SIGIS="undef"/>
         <PORT DIR="O" NAME="mb_reset" SIGIS="rst"/>
