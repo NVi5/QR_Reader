@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-// Date        : Tue Dec 31 20:07:30 2019
+// Date        : Tue Dec 31 22:46:43 2019
 // Host        : DESKTOP-A5397SU running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               D:/Elektronika/Workspace/Xilinx/QR_Reader/ip_core/Im_Process/ip/Im_Process_TextBlock_0_0/Im_Process_TextBlock_0_0_sim_netlist.v
@@ -6200,7 +6200,7 @@ module Im_Process_TextBlock_0_0_delay
         .I3(\slv_reg3_reg[3] [2]),
         .O(\rgb_out[23]_i_17_n_0 ));
   LUT4 #(
-    .INIT(16'hFFFD)) 
+    .INIT(16'hFFDF)) 
     \rgb_out[23]_i_3 
        (.I0(\delay_stage[1].del_mem_reg[1][48]_0 ),
         .I1(\slv_reg3_reg[2] ),

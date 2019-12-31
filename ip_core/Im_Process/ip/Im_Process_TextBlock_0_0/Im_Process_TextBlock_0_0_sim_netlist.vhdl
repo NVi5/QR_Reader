@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Tue Dec 31 20:07:30 2019
+-- Date        : Tue Dec 31 22:46:43 2019
 -- Host        : DESKTOP-A5397SU running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               D:/Elektronika/Workspace/Xilinx/QR_Reader/ip_core/Im_Process/ip/Im_Process_TextBlock_0_0/Im_Process_TextBlock_0_0_sim_netlist.vhdl
@@ -6293,7 +6293,7 @@ pixel0_carry_i_4: unisim.vcomponents.LUT2
     );
 \rgb_out[23]_i_3\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FFFD"
+      INIT => X"FFDF"
     )
         port map (
       I0 => \delay_stage[1].del_mem_reg[1][48]_0\(0),
