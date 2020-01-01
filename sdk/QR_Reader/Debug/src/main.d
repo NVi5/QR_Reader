@@ -18,7 +18,7 @@ src/main.o src/main.o: ../src/main.cc \
  ../../QR_Reader_bsp/ps7_cortexa9_0/include/xil_cache.h \
  ../../QR_Reader_bsp/ps7_cortexa9_0/include/xparameters.h \
  ../../QR_Reader_bsp/ps7_cortexa9_0/include/xil_exception.h \
- ../src/../include/tinyprintf.h
+ ../src/../include/tinyprintf.h ../src/quirc/quirc.h
 
 ../../QR_Reader_bsp/ps7_cortexa9_0/include/xaxidma.h:
 
@@ -59,3 +59,5 @@ src/main.o src/main.o: ../src/main.cc \
 ../../QR_Reader_bsp/ps7_cortexa9_0/include/xil_exception.h:
 
 ../src/../include/tinyprintf.h:
+
+../src/quirc/quirc.h:

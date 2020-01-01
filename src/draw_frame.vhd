@@ -76,7 +76,15 @@ begin
             (hcounter_int >= bounding_box_x1 and hcounter_int <= bounding_box_x2 and vcounter_int >= (bounding_box_y1-bounding_box_width) and vcounter_int <= bounding_box_y1)) then
                 rgb_out <= bounding_box_color;
             else
-                rgb_out <= rgb_in;
+                if (hcounter_int >= bounding_box_x1 and hcounter_int <= bounding_box_x2 and vcounter_int >= bounding_box_y1 and vcounter_int <= bounding_box_y2) then
+                    rgb_out <= rgb_in;
+                else
+                    if rgb_in = X"FFFFFF" then
+                        rgb_out <= X"7F7F7F";
+                    else
+                        rgb_out <= X"000000";
+                    end if;
+                end if;
             end if;
         end if;
     end if;
