@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Root MajorVersion="0" MinorVersion="36">
-  <CompositeFile CompositeFileTopName="Im_Process" CanBeSetAsTop="false" CanDisplayChildGraph="true">
+  <CompositeFile CompositeFileTopName="Im_Process" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1577828740"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1577828740"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1577828740"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1577828740"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1578087258"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1578087258"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1578087258"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1578087258"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\Im_Process_TextBlock_0_0\Im_Process_TextBlock_0_0.xci" Type="IP">
         <Instance HierarchyPath="TextBlock_0"/>
@@ -55,16 +55,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="synth\Im_Process.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-      </File>
-      <File Name="sim\Im_Process.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\Im_Process_axi_bram_ctrl_0_0\Im_Process_axi_bram_ctrl_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_bram_ctrl_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -103,6 +93,16 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\Im_Process.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+      </File>
+      <File Name="sim\Im_Process.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="Im_Process.bmm" Type="BMM">

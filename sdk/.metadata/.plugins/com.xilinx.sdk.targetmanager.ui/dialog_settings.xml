@@ -4,11 +4,11 @@
 	<item value="Auto Detect" key="main_hw_platform_1-device"/>
 	<item value="main_hw_platform_1" key="programfpga.hwplatform"/>
 	<item value="Local" key="main_hw_platform_1-target"/>
-	<item value="main.mmi" key="main_hw_platform_0-bmmFile"/>
+	<item value="" key="main_hw_platform_0-bmmFile"/>
 	<item value="main.bit" key="main_hw_platform_1-bitFile"/>
 	<item value="Local" key="main_hw_platform_0-target"/>
 	<item value="false" key="main_hw_platform_0-partial_bit"/>
 	<item value="false" key="main_hw_platform_1-partial_bit"/>
 	<item value="main.bit" key="main_hw_platform_0-bitFile"/>
-	<item value="" key="main_hw_platform_1-bmmFile"/>
+	<item value="main.mmi" key="main_hw_platform_1-bmmFile"/>
 </section>

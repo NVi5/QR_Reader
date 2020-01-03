@@ -4,8 +4,8 @@
 	module TextBlock_v1_0 #
 	(
 		// Users to add parameters here
-        parameter integer TEXT_WIDTH = 16,
-        parameter integer TEXT_HEIGHT = 16,
+        parameter integer TEXT_WIDTH = 128,
+        parameter integer TEXT_HEIGHT = 2,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 

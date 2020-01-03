@@ -21,7 +21,7 @@ const uint8_t image_1[] = {
 #define TEXT_SCALE				(*(uint32_t*)(TEXT_BASE + 12))
 
 __attribute__((section(".text_buffer")))
-static char text[16*16];
+static char text[128];
 
 static XAxiDma text_dma;
 static XAxiDma_Config *text_dma_config;
@@ -32,8 +32,8 @@ int main()
 	text_dma_config = XAxiDma_LookupConfig(XPAR_AXIDMA_0_DEVICE_ID);
 	XAxiDma_CfgInitialize(&text_dma, text_dma_config);
 
-	TEXT_XPOS = 1;
-	TEXT_YPOS = 0;
+	TEXT_XPOS = 128;
+	TEXT_YPOS = 626;
 	TEXT_COLOR = 0xFF0000;
 	TEXT_SCALE = 1;
 
@@ -84,17 +84,17 @@ int main()
 			if (err){
 				sprintf(text, "dupxo");
 			} else {
-				snprintf(text, 16*16, "%s", data.payload);
+				snprintf(text, 256, "%s", data.payload);
 			};
 		}
 
 		quirc_destroy(qr);
 
-
+//		sprintf(text, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque pen");
 		XAxiDma_SimpleTransfer(
 				&text_dma,
 				(UINTPTR)text,
-				16*16,
+				128,
 				XAXIDMA_DMA_TO_DEVICE
 			);
 	}

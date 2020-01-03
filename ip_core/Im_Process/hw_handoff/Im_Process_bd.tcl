@@ -171,6 +171,10 @@ proc create_root_design { parentCell } {
 
   # Create instance: TextBlock_0, and set properties
   set TextBlock_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:TextBlock:1.1 TextBlock_0 ]
+  set_property -dict [ list \
+   CONFIG.TEXT_HEIGHT {2} \
+   CONFIG.TEXT_WIDTH {64} \
+ ] $TextBlock_0
 
   # Create instance: axi_bram_ctrl_0, and set properties
   set axi_bram_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.0 axi_bram_ctrl_0 ]

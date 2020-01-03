@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:TextBlock:1.1
-// IP Revision: 16
+// IP Revision: 19
 
 `timescale 1ns/1ps
 
@@ -188,8 +188,8 @@ input wire s00_axis_aresetn;
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
     .C_S00_AXI_ADDR_WIDTH(4),  // Width of S_AXI address bus
     .C_S00_AXIS_TDATA_WIDTH(32),  // AXI4Stream sink: Data Width
-    .TEXT_WIDTH(16),
-    .TEXT_HEIGHT(16)
+    .TEXT_WIDTH(64),
+    .TEXT_HEIGHT(2)
   ) inst (
     .vcount_in(vcount_in),
     .vsync_in(vsync_in),

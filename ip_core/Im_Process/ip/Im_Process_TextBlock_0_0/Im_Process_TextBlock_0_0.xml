@@ -913,11 +913,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Dec 31 21:45:39 UTC 2019</spirit:value>
+            <spirit:value>Fri Jan 03 21:01:02 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:ad3f8ec7</spirit:value>
+            <spirit:value>8:bd73dba8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -933,11 +933,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Dec 31 21:45:39 UTC 2019</spirit:value>
+            <spirit:value>Fri Jan 03 21:34:18 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:ad3f8ec7</spirit:value>
+            <spirit:value>8:bd73dba8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -953,11 +953,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Dec 31 21:45:39 UTC 2019</spirit:value>
+            <spirit:value>Fri Jan 03 21:01:02 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:9c395f16</spirit:value>
+            <spirit:value>8:a6232e3c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -973,29 +973,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Dec 31 21:45:39 UTC 2019</spirit:value>
+            <spirit:value>Fri Jan 03 21:34:18 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:9c395f16</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_externalfiles</spirit:name>
-        <spirit:displayName>External Files</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:external.files</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_externalfiles_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jan 01 16:06:39 UTC 2020</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:ad3f8ec7</spirit:value>
+            <spirit:value>8:a6232e3c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1630,12 +1612,12 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>TEXT_WIDTH</spirit:name>
         <spirit:displayName>Text Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.TEXT_WIDTH">16</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.TEXT_WIDTH">64</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>TEXT_HEIGHT</spirit:name>
         <spirit:displayName>Text Height</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.TEXT_HEIGHT">16</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.TEXT_HEIGHT">2</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -1659,27 +1641,27 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/hdl/TextBlock_v1_0_S00_AXI.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/hdl/TextBlock_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/hdl/TextBlock_v1_0_S00_AXIS.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/hdl/TextBlock_v1_0_S00_AXIS.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/src/delay.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/src/delay.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/src/font_rom.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/src/font_rom.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/src/text_ram.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/src/text_ram.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/hdl/TextBlock_v1_0.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/hdl/TextBlock_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1694,27 +1676,27 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/hdl/TextBlock_v1_0_S00_AXI.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/hdl/TextBlock_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/hdl/TextBlock_v1_0_S00_AXIS.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/hdl/TextBlock_v1_0_S00_AXIS.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/src/delay.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/src/delay.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/src/font_rom.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/src/font_rom.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/src/text_ram.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/src/text_ram.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ec1e/hdl/TextBlock_v1_0.v</spirit:name>
+        <spirit:name>../../ipshared/81a0/hdl/TextBlock_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1723,42 +1705,6 @@
       <spirit:file>
         <spirit:name>sim/Im_Process_TextBlock_0_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_externalfiles_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>Im_Process_TextBlock_0_0.dcp</spirit:name>
-        <spirit:userFileType>dcp</spirit:userFileType>
-        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>Im_Process_TextBlock_0_0_stub.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>Im_Process_TextBlock_0_0_stub.vhdl</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>Im_Process_TextBlock_0_0_sim_netlist.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>Im_Process_TextBlock_0_0_sim_netlist.vhdl</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
@@ -1835,22 +1781,22 @@
     <spirit:parameter>
       <spirit:name>TEXT_WIDTH</spirit:name>
       <spirit:displayName>Text Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.TEXT_WIDTH">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.TEXT_WIDTH">64</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>TEXT_HEIGHT</spirit:name>
       <spirit:displayName>Text Height</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.TEXT_HEIGHT">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.TEXT_HEIGHT">2</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>TextBlock_v1.1</xilinx:displayName>
-      <xilinx:coreRevision>16</xilinx:coreRevision>
+      <xilinx:coreRevision>19</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:vga_text:1.0_ARCHIVE_LOCATION">d:/Elektronika/Workspace/Xilinx/UEC2_Project/ip_core/TextBlock_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="xilinx.com:user:TextBlock:1.0_ARCHIVE_LOCATION">d:/Elektronika/Workspace/Xilinx/UEC2_Project/ip_core/TextBlock_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="xilinx.com:user:TextBlock:1.1_ARCHIVE_LOCATION">d:/Elektronika/Workspace/Xilinx/QR_Reader/ip_core/TextBlock_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="xilinx.com:user:TextBlock:1.1_ARCHIVE_LOCATION">d:/Electronics/Workspace/Xilinx/QR_Reader/ip_core/TextBlock_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ADDR_WIDTH" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
@@ -1891,16 +1837,18 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXIS_CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI_CLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI_CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.TEXT_HEIGHT" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.TEXT_WIDTH" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="af2f3b9e"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d3b448a0"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="129aec88"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="3aed3d8e"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="63200de1"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="c30f1c04"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="2cdf608c"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="44e5c824"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

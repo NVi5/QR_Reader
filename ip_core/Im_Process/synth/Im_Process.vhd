@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
---Date        : Tue Dec 31 22:45:38 2019
---Host        : DESKTOP-A5397SU running 64-bit major release  (build 9200)
+--Date        : Fri Jan  3 22:34:17 2020
+--Host        : RYZEN-PC running 64-bit major release  (build 9200)
 --Command     : generate_target Im_Process.bd
 --Design      : Im_Process
 --Purpose     : IP block netlist
@@ -2436,7 +2436,7 @@ entity Im_Process is
     Vrst : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of Im_Process : entity is "Im_Process,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Im_Process,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=16,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_bram_cntlr_cnt=3,da_ps7_cnt=3,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of Im_Process : entity is "Im_Process,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Im_Process,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=16,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_bram_cntlr_cnt=3,da_ps7_cnt=3,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of Im_Process : entity is "Im_Process.hwdef";
 end Im_Process;

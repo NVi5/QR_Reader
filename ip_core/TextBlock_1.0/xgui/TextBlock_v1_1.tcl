@@ -11,6 +11,8 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "C_S00_AXI_HIGHADDR" -parent ${Page_0}
   set C_S00_AXIS_TDATA_WIDTH [ipgui::add_param $IPINST -name "C_S00_AXIS_TDATA_WIDTH" -parent ${Page_0} -widget comboBox]
   set_property tooltip {AXI4Stream sink: Data Width} ${C_S00_AXIS_TDATA_WIDTH}
+  ipgui::add_param $IPINST -name "TEXT_WIDTH" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "TEXT_HEIGHT" -parent ${Page_0}
 
 
 }
