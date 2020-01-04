@@ -186,7 +186,6 @@ static void Data_Abort_Handler (void);
 static void IRQ_Handler (void);
 static void FIQ_Handler (void);
 
-
 #ifdef XPAR_XWDTPS_0_BASEADDR
 int InitWatchDog(void);
 u32 ConvertTime_WdtCounter(u32 seconds);
@@ -246,6 +245,7 @@ int main(void)
 	/*
 	 * PCW initialization for MIO,PLL,CLK and DDR
 	 */
+//	sleep(10);
 	Status = ps7_init();
 	if (Status != FSBL_PS7_INIT_SUCCESS) {
 		fsbl_printf(DEBUG_GENERAL,"PS7_INIT_FAIL : %s\r\n",

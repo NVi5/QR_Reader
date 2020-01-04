@@ -405,25 +405,25 @@ u32 LoadBootImage(void)
 		 * Loop will break when PS load address zero and partition is
 		 * un-signed or un-encrypted
 		 */
-		if ((PSPartitionFlag == 1) && (PartitionLoadAddr < DDR_START_ADDR)) {
-			if ((PartitionLoadAddr == 0) &&
-					(!((SignedPartitionFlag == 1) ||
-							(EncryptedPartitionFlag == 1)))) {
-				break;
-			} else {
-				fsbl_printf(DEBUG_GENERAL,
-						"INVALID_LOAD_ADDRESS_FAIL\r\n");
-				OutputStatus(INVALID_LOAD_ADDRESS_FAIL);
-				FsblFallback();
-			}
-		}
-
-		if (PSPartitionFlag && (PartitionLoadAddr > DDR_END_ADDR)) {
-			fsbl_printf(DEBUG_GENERAL,
-					"INVALID_LOAD_ADDRESS_FAIL\r\n");
-			OutputStatus(INVALID_LOAD_ADDRESS_FAIL);
-			FsblFallback();
-		}
+//		if ((PSPartitionFlag == 1) && (PartitionLoadAddr < DDR_START_ADDR)) {
+//			if ((PartitionLoadAddr == 0) &&
+//					(!((SignedPartitionFlag == 1) ||
+//							(EncryptedPartitionFlag == 1)))) {
+//				break;
+//			} else {
+//				fsbl_printf(DEBUG_GENERAL,
+//						"INVALID_LOAD_ADDRESS_FAIL\r\n");
+//				OutputStatus(INVALID_LOAD_ADDRESS_FAIL);
+//				FsblFallback();
+//			}
+//		}
+//
+//		if (PSPartitionFlag && (PartitionLoadAddr > DDR_END_ADDR)) {
+//			fsbl_printf(DEBUG_GENERAL,
+//					"INVALID_LOAD_ADDRESS_FAIL\r\n");
+//			OutputStatus(INVALID_LOAD_ADDRESS_FAIL);
+//			FsblFallback();
+//		}
 
         /*
          * Load execution address of first PS partition
