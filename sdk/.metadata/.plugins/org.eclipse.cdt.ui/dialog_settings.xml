@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="CPathsPropertyPage">
+		<item value="0" key="pageIndex"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
+		<item value="180" key="size.height"/>
+		<item value="388" key="size.width"/>
+	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+	</section>
+	<section name="IncludeSysmbolsPropertyPage">
+		<item value="0" key="pageIndex"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>

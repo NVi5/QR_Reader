@@ -22,6 +22,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_core/DrawFrame_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../vivado-library-master"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_core"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>

@@ -2,42 +2,45 @@
    ExpandedHierarchyInLayout: "",
    guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -y 70 -defaultsOSRD
-preplace port Vrst -pg 1 -y 510 -defaultsOSRD
-preplace port Vout -pg 1 -y 670 -defaultsOSRD
-preplace port Vclk -pg 1 -y 430 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 90 -defaultsOSRD
-preplace port Vin -pg 1 -y 650 -defaultsOSRD
-preplace port RefClk_out -pg 1 -y 130 -defaultsOSRD
-preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -y 530 -defaultsOSRD
-preplace inst axi_dma_0 -pg 1 -lvl 2 -y 540 -defaultsOSRD
-preplace inst axi_bram_ctrl_0_bram -pg 1 -lvl 5 -y 270 -defaultsOSRD
-preplace inst TextBlock_0 -pg 1 -lvl 4 -y 670 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -y 230 -defaultsOSRD
-preplace inst axi_bram_ctrl_0 -pg 1 -lvl 4 -y 270 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 4 -y 110 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 4 2 NJ 70 NJ
-preplace netloc ps7_0_axi_periph_M02_AXI 1 3 1 N
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 4 1 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 2 3 750 10 NJ 10 1490
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 5 20 420 NJ 420 NJ 420 NJ 420 1490
-preplace netloc Vclk_1 1 0 4 10 430 370 340 730 30 1080
-preplace netloc Video_IN_0_1 1 0 4 NJ 650 NJ 650 NJ 650 NJ
-preplace netloc ps7_0_axi_periph_M01_AXI 1 1 3 390 40 NJ 40 1060
-preplace netloc rst_ps7_0_50M_interconnect_aresetn 1 1 2 360J 160 N
-preplace netloc axi_dma_0_M_AXI_MM2S 1 2 1 740
-preplace netloc processing_system7_0_FIXED_IO 1 4 2 NJ 90 NJ
+preplace port DDR -pg 1 -y 60 -defaultsOSRD
+preplace port Vrst -pg 1 -y 160 -defaultsOSRD
+preplace port Vout -pg 1 -y 460 -defaultsOSRD
+preplace port Vclk -pg 1 -y 80 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 80 -defaultsOSRD
+preplace port Vin -pg 1 -y 640 -defaultsOSRD
+preplace port RefClk_out -pg 1 -y 120 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -y 180 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 2 -y 100 -defaultsOSRD
+preplace inst axi_bram_ctrl_0_bram -pg 1 -lvl 5 -y 670 -defaultsOSRD
+preplace inst TextBlock_0 -pg 1 -lvl 5 -y 460 -defaultsOSRD
+preplace inst DrawFrame_0 -pg 1 -lvl 4 -y 490 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -y 430 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 4 -y 670 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 5 -y 100 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 5 1 NJ
+preplace netloc ps7_0_axi_periph_M02_AXI 1 3 1 1090
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 4 1 N
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 4 770 200 NJ 200 NJ 200 1810
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 20 280 380J 210 NJ 210 NJ 210 NJ 210 1800
+preplace netloc Vclk_1 1 0 5 20 80 360 190 750 650 1080 580 1380
+preplace netloc ps7_0_axi_periph_M03_AXI 1 3 1 N
+preplace netloc ps7_0_axi_periph_M01_AXI 1 1 3 390 220 NJ 220 1070
+preplace netloc rst_ps7_0_50M_interconnect_aresetn 1 1 2 NJ 200 740
+preplace netloc axi_dma_0_M_AXI_MM2S 1 2 1 760
+preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ
 preplace netloc Vrst_1 1 0 1 NJ
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 3 380 430 750 430 1090
-preplace netloc processing_system7_0_FCLK_CLK0 1 4 2 NJ 130 NJ
-preplace netloc ps7_0_axi_periph_M00_AXI 1 3 1 1070
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 2 740 630 NJ
-preplace netloc TextBlock_0_Video_OUT 1 4 2 NJ 670 NJ
-levelinfo -pg 1 -10 190 560 910 1290 1620 1770 -top 0 -bot 790
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 4 370 230 730 660 1100 590 1400
+preplace netloc Vin_1 1 0 4 NJ 640 NJ 640 NJ 640 1070J
+preplace netloc processing_system7_0_FCLK_CLK0 1 5 1 NJ
+preplace netloc ps7_0_axi_periph_M00_AXI 1 3 2 NJ 400 N
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 3 NJ 90 NJ 90 1400
+preplace netloc TextBlock_0_Video_OUT 1 5 1 NJ
+preplace netloc DrawFrame_0_Video_OUT 1 4 1 1390
+levelinfo -pg 1 0 190 560 920 1240 1600 1830 -top 0 -bot 750
 ",
 }
 {
-   da_axi4_cnt: "3",
+   da_axi4_cnt: "4",
    da_bram_cntlr_cnt: "3",
    da_ps7_cnt: "3",
 }

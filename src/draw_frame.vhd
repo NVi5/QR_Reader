@@ -73,7 +73,7 @@ begin
             if ((hcounter_int >= bounding_box_x2 and hcounter_int <= (bounding_box_x2 + bounding_box_width) and vcounter_int >= (bounding_box_y1-bounding_box_width) and vcounter_int <= (bounding_box_y2+bounding_box_width)) or  
             (hcounter_int >= (bounding_box_x1-bounding_box_width) and hcounter_int <= bounding_box_x1 and vcounter_int >= (bounding_box_y1-bounding_box_width) and vcounter_int <= (bounding_box_y2+bounding_box_width)) or 
             (hcounter_int >= bounding_box_x1 and hcounter_int <= bounding_box_x2 and vcounter_int >= bounding_box_y2 and vcounter_int <= (bounding_box_y2+bounding_box_width)) or 
-            (hcounter_int >= bounding_box_x1 and hcounter_int <= bounding_box_x2 and vcounter_int >= (bounding_box_y1-bounding_box_width) and vcounter_int <= bounding_box_y1)) then
+            (hcounter_int >= bounding_box_x1 and hcounter_int <= bounding_box_x2 and vcounter_int >= (bounding_box_y1-bounding_box_width) and vcounter_int <= bounding_box_y1)) and vde_in = '1' then
                 rgb_out <= bounding_box_color;
             else
                 if (hcounter_int >= bounding_box_x1 and hcounter_int <= bounding_box_x2 and vcounter_int >= bounding_box_y1 and vcounter_int <= bounding_box_y2) then

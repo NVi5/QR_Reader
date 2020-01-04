@@ -30,6 +30,17 @@
  
  
 /******************************************************************/
+/* Definitions for driver DRAWFRAME */
+#define XPAR_DRAWFRAME_NUM_INSTANCES 1
+
+/* Definitions for peripheral DRAWFRAME_0 */
+#define XPAR_DRAWFRAME_0_DEVICE_ID 0
+#define XPAR_DRAWFRAME_0_S00_AXI_BASEADDR 0x40001000
+#define XPAR_DRAWFRAME_0_S00_AXI_HIGHADDR 0x40001FFF
+
+
+/******************************************************************/
+
 /* Definitions for driver TEXTBLOCK */
 #define XPAR_TEXTBLOCK_NUM_INSTANCES 1
 

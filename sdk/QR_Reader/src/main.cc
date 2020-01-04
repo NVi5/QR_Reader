@@ -20,6 +20,15 @@ const uint8_t image_1[] = {
 #define TEXT_COLOR				(*(uint32_t*)(TEXT_BASE + 8))
 #define TEXT_SCALE				(*(uint32_t*)(TEXT_BASE + 12))
 
+#define FRAME_BASE 				XPAR_DRAWFRAME_0_S00_AXI_BASEADDR
+#define FRAME_XPOS1				(*(uint16_t*)(FRAME_BASE + 0))
+#define FRAME_YPOS1				(*(uint16_t*)(FRAME_BASE + 2))
+#define FRAME_XPOS2				(*(uint16_t*)(FRAME_BASE + 4))
+#define FRAME_YPOS2				(*(uint16_t*)(FRAME_BASE + 6))
+#define FRAME_WIDTH				(*(uint16_t*)(FRAME_BASE + 8))
+#define FRAME_ENABLE			(*(uint16_t*)(FRAME_BASE + 10))
+#define FRAME_COLOR				(*(uint32_t*)(FRAME_BASE + 12))
+
 __attribute__((section(".text_buffer")))
 static char text[128];
 
@@ -36,6 +45,17 @@ int main()
 	TEXT_YPOS = 626;
 	TEXT_COLOR = 0xFF0000;
 	TEXT_SCALE = 1;
+
+	FRAME_XPOS1 = 640-128;
+	FRAME_YPOS1 = 360-128;
+
+	FRAME_XPOS2 = FRAME_XPOS1+256-1;
+	FRAME_YPOS2 = FRAME_YPOS1+256-1;
+
+	FRAME_COLOR = 0x0000FF;
+	FRAME_WIDTH = 5 - 1;
+
+	FRAME_ENABLE = 1;
 
 	while(1){
 

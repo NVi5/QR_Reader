@@ -3,7 +3,7 @@
 	<name>QR_Reader</name>
 	<comment>Created by SDK v2018.2. QR_Reader_bsp - ps7_cortexa9_0</comment>
 	<projects>
-		<project>QR_Reader_bsp</project>
+		<project>QR_Reader_bsp_0</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
