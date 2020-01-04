@@ -284,7 +284,7 @@ _SDA2_BASE_ = __sdata2_start + ((__sbss2_end - __sdata2_start) / 2 );
    __undef_stack = .;
 } > ps7_ddr_0
 
-.text_buffer : {
+.text_buffer (NOLOAD) : {
    *(.text_buffer)
    *(.text_buffer.*)
    *(.gnu.linkonce.b.*)
