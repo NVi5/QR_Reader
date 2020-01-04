@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<item value="Auto Detect" key="main_hw_platform_0-device"/>
 	<item value="Auto Detect" key="main_hw_platform_1-device"/>
-	<item value="main_hw_platform_1" key="programfpga.hwplatform"/>
+	<item value="main_hw_platform_0" key="programfpga.hwplatform"/>
 	<item value="Local" key="main_hw_platform_1-target"/>
-	<item value="" key="main_hw_platform_0-bmmFile"/>
+	<item value="main.mmi" key="main_hw_platform_0-bmmFile"/>
 	<item value="main.bit" key="main_hw_platform_1-bitFile"/>
 	<item value="Local" key="main_hw_platform_0-target"/>
 	<item value="false" key="main_hw_platform_0-partial_bit"/>
