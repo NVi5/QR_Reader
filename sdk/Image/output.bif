@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = MCS
+the_ROM_image:
+{
+	[bootloader]D:\Electronics\Workspace\Xilinx\QR_Reader\sdk\fsbl\Debug\fsbl.elf
+	D:\Electronics\Workspace\Xilinx\QR_Reader\sdk\main_hw_platform_0\main.bit
+	D:\Electronics\Workspace\Xilinx\QR_Reader\sdk\QR_Reader\Release\QR_Reader.elf
+}
