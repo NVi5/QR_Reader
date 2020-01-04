@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="D:/Electronics/Workspace/Xilinx/QR_Reader/vivado/QR_Reader.xpr">
+<Project Version="7" Minor="38" Path="C:/Users/wojte/Desktop/git_vivado/QR_Reader/vivado/QR_Reader.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="6254e8da6cb14ef496054a4d53d0d2bb"/>

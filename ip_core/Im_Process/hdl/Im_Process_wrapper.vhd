@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
---Date        : Sat Jan  4 11:25:51 2020
---Host        : RYZEN-PC running 64-bit major release  (build 9200)
+--Date        : Sat Jan  4 18:07:57 2020
+--Host        : DESKTOP-MKH1C9V running 64-bit major release  (build 9200)
 --Command     : generate_target Im_Process_wrapper.bd
 --Design      : Im_Process_wrapper
 --Purpose     : IP block netlist
@@ -82,15 +82,15 @@ architecture STRUCTURE of Im_Process_wrapper is
     Vout_hsync : out STD_LOGIC;
     Vout_rgb : out STD_LOGIC_VECTOR ( 23 downto 0 );
     Vout_vsync : out STD_LOGIC;
+    Vclk : in STD_LOGIC;
+    RefClk_out : out STD_LOGIC;
+    Vrst : in STD_LOGIC;
+    Vin_hsync : in STD_LOGIC;
+    Vin_rgb : in STD_LOGIC_VECTOR ( 23 downto 0 );
     Vin_hcount : in STD_LOGIC_VECTOR ( 10 downto 0 );
     Vin_blnk : in STD_LOGIC;
     Vin_vcount : in STD_LOGIC_VECTOR ( 10 downto 0 );
-    Vin_hsync : in STD_LOGIC;
-    Vin_rgb : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    Vin_vsync : in STD_LOGIC;
-    Vclk : in STD_LOGIC;
-    RefClk_out : out STD_LOGIC;
-    Vrst : in STD_LOGIC
+    Vin_vsync : in STD_LOGIC
   );
   end component Im_Process;
 begin

@@ -155,7 +155,6 @@ proc create_root_design { parentCell } {
   # Create interface ports
   set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
-  set Vin [ create_bd_intf_port -mode Slave -vlnv xilinx.com:user:RGBInterface_rtl:1.0 Vin ]
   set Vout [ create_bd_intf_port -mode Master -vlnv xilinx.com:user:RGBInterface_rtl:1.0 Vout ]
 
   # Create ports
@@ -164,6 +163,12 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.FREQ_HZ {74250000} \
  ] $Vclk
+  set Vin_blnk [ create_bd_port -dir I Vin_blnk ]
+  set Vin_hcount [ create_bd_port -dir I -from 10 -to 0 Vin_hcount ]
+  set Vin_hsync [ create_bd_port -dir I Vin_hsync ]
+  set Vin_rgb [ create_bd_port -dir I -from 23 -to 0 Vin_rgb ]
+  set Vin_vcount [ create_bd_port -dir I -from 10 -to 0 Vin_vcount ]
+  set Vin_vsync [ create_bd_port -dir I Vin_vsync ]
   set Vrst [ create_bd_port -dir I -type rst Vrst ]
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_HIGH} \
@@ -1065,17 +1070,22 @@ proc create_root_design { parentCell } {
   # Create instance: ps7_0_axi_periph, and set properties
   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {4} \
+   CONFIG.NUM_MI {5} \
    CONFIG.NUM_SI {2} \
  ] $ps7_0_axi_periph
 
   # Create instance: rst_ps7_0_50M, and set properties
   set rst_ps7_0_50M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_50M ]
 
+  # Create instance: video_ram_0, and set properties
+  set video_ram_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:video_ram:1.0 video_ram_0 ]
+  set_property -dict [ list \
+   CONFIG.C_S00_AXI_ADDR_WIDTH {32} \
+ ] $video_ram_0
+
   # Create interface connections
   connect_bd_intf_net -intf_net DrawFrame_0_Video_OUT [get_bd_intf_pins DrawFrame_0/Video_OUT] [get_bd_intf_pins TextBlock_0/Video_IN]
   connect_bd_intf_net -intf_net TextBlock_0_Video_OUT [get_bd_intf_ports Vout] [get_bd_intf_pins TextBlock_0/Video_OUT]
-  connect_bd_intf_net -intf_net Vin_1 [get_bd_intf_ports Vin] [get_bd_intf_pins DrawFrame_0/Video_IN]
   connect_bd_intf_net -intf_net axi_bram_ctrl_0_BRAM_PORTA [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins axi_bram_ctrl_0_bram/BRAM_PORTA]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins TextBlock_0/S00_AXIS] [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXI_MM2S [get_bd_intf_pins axi_dma_0/M_AXI_MM2S] [get_bd_intf_pins ps7_0_axi_periph/S01_AXI]
@@ -1086,14 +1096,21 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins axi_dma_0/S_AXI_LITE] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins axi_bram_ctrl_0/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M03_AXI [get_bd_intf_pins DrawFrame_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M04_AXI [get_bd_intf_pins ps7_0_axi_periph/M04_AXI] [get_bd_intf_pins video_ram_0/S00_AXI]
 
   # Create port connections
-  connect_bd_net -net Vclk_1 [get_bd_ports Vclk] [get_bd_pins DrawFrame_0/s00_axi_aclk] [get_bd_pins TextBlock_0/s00_axi_aclk] [get_bd_pins TextBlock_0/s00_axis_aclk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins ps7_0_axi_periph/S01_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
+  connect_bd_net -net Vclk_1 [get_bd_ports Vclk] [get_bd_pins DrawFrame_0/s00_axi_aclk] [get_bd_pins TextBlock_0/s00_axi_aclk] [get_bd_pins TextBlock_0/s00_axis_aclk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins ps7_0_axi_periph/S01_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk] [get_bd_pins video_ram_0/s00_axi_aclk]
   connect_bd_net -net Vrst_1 [get_bd_ports Vrst] [get_bd_pins rst_ps7_0_50M/ext_reset_in]
+  connect_bd_net -net hcounter_in_0_1 [get_bd_ports Vin_hcount] [get_bd_pins DrawFrame_0/hcounter_in] [get_bd_pins video_ram_0/hcounter_in]
+  connect_bd_net -net hsync_in_0_1 [get_bd_ports Vin_hsync] [get_bd_pins DrawFrame_0/hsync_in] [get_bd_pins video_ram_0/hsync_in]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_ports RefClk_out] [get_bd_pins processing_system7_0/FCLK_CLK0]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_50M/aux_reset_in]
+  connect_bd_net -net rgb_in_0_1 [get_bd_ports Vin_rgb] [get_bd_pins DrawFrame_0/rgb_in] [get_bd_pins video_ram_0/rgb_in]
   connect_bd_net -net rst_ps7_0_50M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_50M/interconnect_aresetn]
-  connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins DrawFrame_0/s00_axi_aresetn] [get_bd_pins TextBlock_0/s00_axi_aresetn] [get_bd_pins TextBlock_0/s00_axis_aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins ps7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins DrawFrame_0/s00_axi_aresetn] [get_bd_pins TextBlock_0/s00_axi_aresetn] [get_bd_pins TextBlock_0/s00_axis_aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins ps7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn] [get_bd_pins video_ram_0/s00_axi_aresetn]
+  connect_bd_net -net vcounter_in_0_1 [get_bd_ports Vin_vcount] [get_bd_pins DrawFrame_0/vcounter_in] [get_bd_pins video_ram_0/vcounter_in]
+  connect_bd_net -net vde_in_0_1 [get_bd_ports Vin_blnk] [get_bd_pins DrawFrame_0/vde_in] [get_bd_pins video_ram_0/vde_in]
+  connect_bd_net -net vsync_in_0_1 [get_bd_ports Vin_vsync] [get_bd_pins DrawFrame_0/vsync_in] [get_bd_pins video_ram_0/vsync_in]
 
   # Create address segments
   create_bd_addr_seg -range 0x00001000 -offset 0x40001000 [get_bd_addr_spaces axi_dma_0/Data_MM2S] [get_bd_addr_segs DrawFrame_0/S00_AXI/S00_AXI_reg] SEG_DrawFrame_0_S00_AXI_reg
@@ -1104,6 +1121,12 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x00001000 -offset 0x40000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs TextBlock_0/S00_AXI/S00_AXI_reg] SEG_TextBlock_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00002000 -offset 0x42000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0
   create_bd_addr_seg -range 0x00010000 -offset 0x40400000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_dma_0/S_AXI_LITE/Reg] SEG_axi_dma_0_Reg
+  create_bd_addr_seg -range 0x00200000 -offset 0x40200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs video_ram_0/S00_AXI/S00_AXI_reg] SEG_video_ram_0_S00_AXI_reg
+
+  # Exclude Address Segments
+  create_bd_addr_seg -range 0x00200000 -offset 0x40200000 [get_bd_addr_spaces axi_dma_0/Data_MM2S] [get_bd_addr_segs video_ram_0/S00_AXI/S00_AXI_reg] SEG_video_ram_0_S00_AXI_reg
+  exclude_bd_addr_seg [get_bd_addr_segs axi_dma_0/Data_MM2S/SEG_video_ram_0_S00_AXI_reg]
+
 
 
   # Restore current instance

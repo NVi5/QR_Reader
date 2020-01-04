@@ -12,12 +12,12 @@
   <Processor Endianness="Little" InstPath="Im_Process_i/processing_system7_0">
     <AddressSpace Name="Im_Process_i_processing_system7_0.Im_Process_i_axi_bram_ctrl_0" Begin="1107296256" End="1107304447">
       <BusBlock>
-        <BitLane MemType="RAMB36" Placement="X1Y9">
+        <BitLane MemType="RAMB36" Placement="X1Y8">
           <DataWidth MSB="15" LSB="0"/>
           <AddressRange Begin="0" End="2047"/>
           <Parity ON="false" NumBits="0"/>
         </BitLane>
-        <BitLane MemType="RAMB36" Placement="X1Y8">
+        <BitLane MemType="RAMB36" Placement="X1Y9">
           <DataWidth MSB="31" LSB="16"/>
           <AddressRange Begin="0" End="2047"/>
           <Parity ON="false" NumBits="0"/>

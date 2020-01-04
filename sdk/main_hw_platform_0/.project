@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>main_hw_platform_1</name>
+	<name>main_hw_platform_0</name>
 	<comment>Created by SDK v2018.2</comment>
 	<projects>
 	</projects>
@@ -11,7 +11,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1577895364968</id>
+			<id>1578159747969</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -20,7 +20,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1577895364982</id>
+			<id>1578159748109</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -29,7 +29,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1577895364993</id>
+			<id>1578159748502</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
