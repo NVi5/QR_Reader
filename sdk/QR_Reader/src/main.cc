@@ -54,19 +54,19 @@ int main()
 
 	FRAME_ENABLE = 0;
 
+	struct quirc *qr;
+
+	qr = quirc_new();
+	if (!qr) {
+		abort();
+	}
+
+	uint8_t *image;
+	int w, h;
+
+	quirc_resize(qr, 512, 512);
+
 	while(1){
-
-		struct quirc *qr;
-
-		qr = quirc_new();
-		if (!qr) {
-			abort();
-		}
-
-		uint8_t *image;
-		int w, h;
-
-		quirc_resize(qr, 512, 512);
 
 		image = quirc_begin(qr, &w, &h);
 
@@ -76,20 +76,10 @@ int main()
 		}
 		VIDEO_RAM_DATA_READ = 1;
 
-		/* Fill out the image buffer here.
-		 * image is a pointer to a w*h bytes.
-		 * One byte per pixel, w pixels per line, h lines in the buffer.
-		 */
 		quirc_end(qr);
-
-		/* ... */
 
 		int num_codes;
 		int i;
-
-		/* We've previously fed an image to the decoder via
-		* quirc_begin/quirc_end.
-		*/
 
 		num_codes = quirc_count(qr);
 		if (num_codes != 1) FRAME_ENABLE = 0;
@@ -100,7 +90,6 @@ int main()
 
 			quirc_extract(qr, i, &code);
 
-			/* Decoding stage */
 			err = quirc_decode(&code, &data);
 			if (err){
 				FRAME_ENABLE = 0;
@@ -118,9 +107,6 @@ int main()
 			};
 		}
 
-		quirc_destroy(qr);
-
-//		sprintf(text, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque pen");
 		XAxiDma_SimpleTransfer(
 				&text_dma,
 				(UINTPTR)text,
@@ -129,5 +115,6 @@ int main()
 			);
 	}
 
+	quirc_destroy(qr);
 	return 0;
 }
