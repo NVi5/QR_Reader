@@ -1,0 +1,134 @@
+#include "xaxidma.h"
+#include "xparameters.h"
+#include "xil_exception.h"
+#include <string.h>
+#include "../include/tinyprintf.h"
+
+#include "quirc/quirc.h"
+
+#define MAX(x, y) (((x) > (y)) ? (x) : (y))
+#define MIN(x, y) (((x) < (y)) ? (x) : (y))
+
+#define XOFFSET 384
+#define YOFFSET 104
+
+#define TEXT_BASE				XPAR_TEXTBLOCK_0_S00_AXI_BASEADDR
+#define TEXT_XPOS				(*(uint32_t*)(TEXT_BASE + 0))
+#define TEXT_YPOS				(*(uint32_t*)(TEXT_BASE + 4))
+#define TEXT_COLOR				(*(uint32_t*)(TEXT_BASE + 8))
+#define TEXT_SCALE				(*(uint32_t*)(TEXT_BASE + 12))
+
+#define FRAME_BASE 				XPAR_DRAWFRAME_0_S00_AXI_BASEADDR
+#define FRAME_XPOS1				(*(uint16_t*)(FRAME_BASE + 0))
+#define FRAME_YPOS1				(*(uint16_t*)(FRAME_BASE + 2))
+#define FRAME_XPOS2				(*(uint16_t*)(FRAME_BASE + 4))
+#define FRAME_YPOS2				(*(uint16_t*)(FRAME_BASE + 6))
+#define FRAME_WIDTH				(*(uint16_t*)(FRAME_BASE + 8))
+#define FRAME_ENABLE			(*(uint16_t*)(FRAME_BASE + 10))
+#define FRAME_COLOR				(*(uint32_t*)(FRAME_BASE + 12))
+
+#define VIDEO_RAM_BASE			(0x40200000)
+#define VIDEO_RAM_DATA_READY	(*(uint32_t*)(VIDEO_RAM_BASE + 0))
+#define VIDEO_RAM_DATA_READ		(*(uint32_t*)(VIDEO_RAM_BASE + 4))
+#define VIDEO_RAM_DATA			((uint32_t*)(VIDEO_RAM_BASE + 8))
+
+__attribute__((section(".text_buffer")))
+static char text[128];
+
+static XAxiDma text_dma;
+static XAxiDma_Config *text_dma_config;
+
+int main()
+{
+
+	text_dma_config = XAxiDma_LookupConfig(XPAR_AXIDMA_0_DEVICE_ID);
+	XAxiDma_CfgInitialize(&text_dma, text_dma_config);
+
+	TEXT_XPOS = 128;
+	TEXT_YPOS = 626;
+	TEXT_COLOR = 0xFF0000;
+	TEXT_SCALE = 1;
+
+	FRAME_COLOR = 0x0000FF;
+	FRAME_WIDTH = 5 - 1;
+
+	FRAME_ENABLE = 0;
+
+	struct quirc *qr;
+
+	qr = quirc_new();
+	if (!qr) {
+		abort();
+	}
+
+	uint8_t *image;
+	int w, h;
+
+	quirc_resize(qr, 512, 512);
+
+	while(1){
+
+		image = quirc_begin(qr, &w, &h);
+
+		while(!VIDEO_RAM_DATA_READY);
+		for(int i = 0; i < 512*512; i++){
+			//uint32_t xd = VIDEO_RAM_DATA[i];
+//			((uint32_t*)image)[i % (512*512/4)] = VIDEO_RAM_DATA[i % (512*512/4)];
+//			image[4*i + 3] = xd;
+//			image[4*i + 2] = xd >> 8;
+//			image[4*i + 1] = xd >> 16;
+//			image[4*i + 0] = xd >> 24;
+			image[i] = VIDEO_RAM_DATA[i>>2];
+		}
+		VIDEO_RAM_DATA_READ = 1;
+
+		for(int i = 0; i < 512*512; i++){
+			if(image[i] == 255) xil_printf("X");
+			else xil_printf("_");
+			if(i % 256 == 0) xil_printf("\r\n");
+		}
+
+		xil_printf("\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
+
+		quirc_end(qr);
+
+		int num_codes;
+		int i;
+
+		num_codes = quirc_count(qr);
+		if (num_codes != 1) FRAME_ENABLE = 0;
+		for (i = 0; i < num_codes; i++) {
+			struct quirc_code code;
+			struct quirc_data data;
+			quirc_decode_error_t err;
+
+			quirc_extract(qr, i, &code);
+
+			err = quirc_decode(&code, &data);
+			if (err){
+				FRAME_ENABLE = 0;
+			} else {
+				FRAME_XPOS1 = MIN(MIN(code.corners[0].x,code.corners[1].x),MIN(code.corners[2].x,code.corners[3].x)) + XOFFSET;
+				FRAME_YPOS1 = MIN(MIN(code.corners[0].y,code.corners[1].y),MIN(code.corners[2].y,code.corners[3].y)) + YOFFSET;
+
+				FRAME_XPOS2 = MAX(MAX(code.corners[0].x,code.corners[1].x),MAX(code.corners[2].x,code.corners[3].x)) + XOFFSET;
+				FRAME_YPOS2 = MAX(MAX(code.corners[0].y,code.corners[1].y),MAX(code.corners[2].y,code.corners[3].y)) + YOFFSET;
+
+				FRAME_ENABLE = 1;
+
+				memset(text, 0, 128);
+				snprintf(text, 128, "%s", data.payload);
+			};
+		}
+
+		XAxiDma_SimpleTransfer(
+				&text_dma,
+				(UINTPTR)text,
+				128,
+				XAXIDMA_DMA_TO_DEVICE
+			);
+	}
+
+	quirc_destroy(qr);
+	return 0;
+}

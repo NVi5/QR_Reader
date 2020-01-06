@@ -3587,16 +3587,16 @@ unsigned long ps7_peripherals_init_data_3_0[] = {
     // .. START: SRAM/NOR SET OPMODE
     // .. FINISH: SRAM/NOR SET OPMODE
     // .. START: UART REGISTERS
-    // .. BDIV = 0x6
-    // .. ==> 0XE0001034[7:0] = 0x00000006U
-    // ..     ==> MASK : 0x000000FFU    VAL : 0x00000006U
+    // .. BDIV = 0x5
+    // .. ==> 0XE0001034[7:0] = 0x00000005U
+    // ..     ==> MASK : 0x000000FFU    VAL : 0x00000005U
     // .. 
-    EMIT_MASKWRITE(0XE0001034, 0x000000FFU ,0x00000006U),
-    // .. CD = 0x7c
-    // .. ==> 0XE0001018[15:0] = 0x0000007CU
-    // ..     ==> MASK : 0x0000FFFFU    VAL : 0x0000007CU
+    EMIT_MASKWRITE(0XE0001034, 0x000000FFU ,0x00000005U),
+    // .. CD = 0x12
+    // .. ==> 0XE0001018[15:0] = 0x00000012U
+    // ..     ==> MASK : 0x0000FFFFU    VAL : 0x00000012U
     // .. 
-    EMIT_MASKWRITE(0XE0001018, 0x0000FFFFU ,0x0000007CU),
+    EMIT_MASKWRITE(0XE0001018, 0x0000FFFFU ,0x00000012U),
     // .. STPBRK = 0x0
     // .. ==> 0XE0001000[8:8] = 0x00000000U
     // ..     ==> MASK : 0x00000100U    VAL : 0x00000000U
@@ -7564,16 +7564,16 @@ unsigned long ps7_peripherals_init_data_2_0[] = {
     // .. START: SRAM/NOR SET OPMODE
     // .. FINISH: SRAM/NOR SET OPMODE
     // .. START: UART REGISTERS
-    // .. BDIV = 0x6
-    // .. ==> 0XE0001034[7:0] = 0x00000006U
-    // ..     ==> MASK : 0x000000FFU    VAL : 0x00000006U
+    // .. BDIV = 0x5
+    // .. ==> 0XE0001034[7:0] = 0x00000005U
+    // ..     ==> MASK : 0x000000FFU    VAL : 0x00000005U
     // .. 
-    EMIT_MASKWRITE(0XE0001034, 0x000000FFU ,0x00000006U),
-    // .. CD = 0x7c
-    // .. ==> 0XE0001018[15:0] = 0x0000007CU
-    // ..     ==> MASK : 0x0000FFFFU    VAL : 0x0000007CU
+    EMIT_MASKWRITE(0XE0001034, 0x000000FFU ,0x00000005U),
+    // .. CD = 0x12
+    // .. ==> 0XE0001018[15:0] = 0x00000012U
+    // ..     ==> MASK : 0x0000FFFFU    VAL : 0x00000012U
     // .. 
-    EMIT_MASKWRITE(0XE0001018, 0x0000FFFFU ,0x0000007CU),
+    EMIT_MASKWRITE(0XE0001018, 0x0000FFFFU ,0x00000012U),
     // .. STPBRK = 0x0
     // .. ==> 0XE0001000[8:8] = 0x00000000U
     // ..     ==> MASK : 0x00000100U    VAL : 0x00000000U
@@ -11472,16 +11472,16 @@ unsigned long ps7_peripherals_init_data_1_0[] = {
     // .. START: SRAM/NOR SET OPMODE
     // .. FINISH: SRAM/NOR SET OPMODE
     // .. START: UART REGISTERS
-    // .. BDIV = 0x6
-    // .. ==> 0XE0001034[7:0] = 0x00000006U
-    // ..     ==> MASK : 0x000000FFU    VAL : 0x00000006U
+    // .. BDIV = 0x5
+    // .. ==> 0XE0001034[7:0] = 0x00000005U
+    // ..     ==> MASK : 0x000000FFU    VAL : 0x00000005U
     // .. 
-    EMIT_MASKWRITE(0XE0001034, 0x000000FFU ,0x00000006U),
-    // .. CD = 0x7c
-    // .. ==> 0XE0001018[15:0] = 0x0000007CU
-    // ..     ==> MASK : 0x0000FFFFU    VAL : 0x0000007CU
+    EMIT_MASKWRITE(0XE0001034, 0x000000FFU ,0x00000005U),
+    // .. CD = 0x12
+    // .. ==> 0XE0001018[15:0] = 0x00000012U
+    // ..     ==> MASK : 0x0000FFFFU    VAL : 0x00000012U
     // .. 
-    EMIT_MASKWRITE(0XE0001018, 0x0000FFFFU ,0x0000007CU),
+    EMIT_MASKWRITE(0XE0001018, 0x0000FFFFU ,0x00000012U),
     // .. STPBRK = 0x0
     // .. ==> 0XE0001000[8:8] = 0x00000000U
     // ..     ==> MASK : 0x00000100U    VAL : 0x00000000U
