@@ -4,6 +4,7 @@
 	<comment></comment>
 	<projects>
 		<project>fsbl_bsp</project>
+		<project>main_hw_platform_2</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

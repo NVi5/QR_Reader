@@ -20,6 +20,7 @@ clients =
 	{ client_name = "sdk"; 
 		rules = (
 			{
+<<<<<<< Updated upstream
 				context="sdk\\\\hardware/1578327452813";
 				xml_map="sdk\\\\hardware/1578327452813";
 				html_map="sdk\\\\hardware/1578327452813";
@@ -29,6 +30,17 @@ clients =
 				context="sdk\\\\bsp/1578335478900";
 				xml_map="sdk\\\\bsp/1578335478900";
 				html_map="sdk\\\\bsp/1578335478900";
+=======
+				context="sdk\\\\hardware/1578273787813";
+				xml_map="sdk\\\\hardware/1578273787813";
+				html_map="sdk\\\\hardware/1578273787813";
+				html_format="UnisimStatsStyle";
+			},
+			{
+				context="sdk\\\\bsp/1578274399015";
+				xml_map="sdk\\\\bsp/1578274399015";
+				html_map="sdk\\\\bsp/1578274399015";
+>>>>>>> Stashed changes
 				html_format="UnisimStatsStyle";
 			}
 		);
