@@ -27,6 +27,7 @@
 #define PLATFORM_ZYNQ
  
 /* Definitions for sleep timer configuration */
+#define XSLEEP_TIMER_IS_DEFAULT_TIMER
  
  
 /******************************************************************/

@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = MCS
+the_ROM_image:
+{
+	[bootloader]C:\Users\wojte\Desktop\Nowy_folder\QR_Reader\sdk\fsbl\Debug\fsbl.elf
+	C:\Users\wojte\Desktop\Nowy_folder\QR_Reader\sdk\main_hw_platform_3\main.bit
+	C:\Users\wojte\Desktop\Nowy_folder\QR_Reader\sdk\QR_Reader\Debug\QR_Reader.elf
+}

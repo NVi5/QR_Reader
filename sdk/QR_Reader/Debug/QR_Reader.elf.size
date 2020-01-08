@@ -1,6 +1,2 @@
    text	   data	    bss	    dec	    hex	filename
-<<<<<<< Updated upstream
-  82140	   2280	4202560	4286980	 416a04	QR_Reader.elf
-=======
-  82204	   2280	4202560	4287044	 416a44	QR_Reader.elf
->>>>>>> Stashed changes
+  82076	   2280	4202560	4286916	 4169c4	QR_Reader.elf

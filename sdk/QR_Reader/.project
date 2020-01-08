@@ -3,8 +3,7 @@
 	<name>QR_Reader</name>
 	<comment></comment>
 	<projects>
-		<project>fsbl_bsp</project>
-		<project>main_hw_platform_2</project>
+		<project>standalone_bsp_0</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

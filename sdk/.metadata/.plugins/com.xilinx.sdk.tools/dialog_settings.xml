@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="Auto Detect" key="main_hw_platform_0-device"/>
-	<item value="main_hw_platform_0" key="programflash.hwplatform"/>
+	<item value="main_hw_platform_3" key="programflash.hwplatform"/>
 	<item value="" key="main_hw_platform_0-offSet"/>
-	<item value="false" key="main_hw_platform_0-verifyFlash"/>
+	<item value="false" key="main_hw_platform_3-verifyFlash"/>
 	<item value="Local" key="main_hw_platform_0-target"/>
 	<item value="D:\Electronics\Workspace\Xilinx\QR_Reader\sdk\fsbl\Debug\fsbl.elf" key="main_hw_platform_0-fsblFile"/>
 	<item value="false" key="main_hw_platform_0-blankCheck"/>
+	<item value="qspi_single" key="main_hw_platform_3-flashType"/>
+	<item value="C:\Users\wojte\Desktop\Nowy_folder\QR_Reader\sdk\Image\BOOT.mcs" key="main_hw_platform_3-imgFile"/>
+	<item value="Auto Detect" key="main_hw_platform_0-device"/>
+	<item value="Local" key="main_hw_platform_3-target"/>
+	<item value="false" key="main_hw_platform_0-verifyFlash"/>
+	<item value="Auto Detect" key="main_hw_platform_3-device"/>
+	<item value="" key="main_hw_platform_3-offSet"/>
+	<item value="C:\Users\wojte\Desktop\Nowy_folder\QR_Reader\sdk\fsbl\Debug\fsbl.elf" key="main_hw_platform_3-fsblFile"/>
+	<item value="false" key="main_hw_platform_3-blankCheck"/>
 	<item value="qspi_single" key="main_hw_platform_0-flashType"/>
 	<item value="D:\Electronics\Workspace\Xilinx\QR_Reader\sdk\Image\BOOT.mcs" key="main_hw_platform_0-imgFile"/>
 </section>

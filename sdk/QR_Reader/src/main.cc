@@ -79,28 +79,17 @@ int main()
 		xd = VIDEO_RAM_DATA[512*512-1];
 		VIDEO_RAM_DATA_READ = 1;
 
-//		for(int i = 0; i < 512*512; i++){
-//			if(image[i] == 255) xil_printf("X");
-//			else xil_printf("_");
-//			if(i % 512 == 0) xil_printf("\r\n");
-//		}
-//
-//		xil_printf("\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
-
 		quirc_end(qr);
 
-		int num_codes;
-		int i;
-
-		num_codes = quirc_count(qr);
+		int num_codes = quirc_count(qr);
 		//xil_printf("%d\r\n", num_codes);
-		if (num_codes != 1) FRAME_ENABLE = 0;
-		for (i = 0; i < num_codes; i++) {
+
+		if(num_codes == 1){
 			struct quirc_code code;
 			struct quirc_data data;
 			quirc_decode_error_t err;
 
-			quirc_extract(qr, i, &code);
+			quirc_extract(qr, 0, &code);
 
 			err = quirc_decode(&code, &data);
 			if (err){
@@ -116,6 +105,7 @@ int main()
 
 				memset(text, 0, 128);
 				snprintf(text, 128, "%s", data.payload);
+				//xil_printf("%s\r\n", data.payload);
 			};
 		}
 

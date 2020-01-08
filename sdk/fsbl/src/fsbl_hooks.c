@@ -105,7 +105,6 @@ u32 FsblHookAfterBitstreamDload(void)
 	u32 Status;
 
 	Status = XST_SUCCESS;
-	//sleep(10);
 
 	/*
 	 * User logic to be added here.
