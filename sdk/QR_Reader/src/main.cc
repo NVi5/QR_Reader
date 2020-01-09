@@ -82,7 +82,6 @@ int main()
 		quirc_end(qr);
 
 		int num_codes = quirc_count(qr);
-		//xil_printf("%d\r\n", num_codes);
 
 		if(num_codes == 1){
 			struct quirc_code code;
@@ -105,8 +104,10 @@ int main()
 
 				memset(text, 0, 128);
 				snprintf(text, 128, "%s", data.payload);
-				//xil_printf("%s\r\n", data.payload);
 			};
+		}
+		else {
+			FRAME_ENABLE = 0;
 		}
 
 		XAxiDma_SimpleTransfer(
